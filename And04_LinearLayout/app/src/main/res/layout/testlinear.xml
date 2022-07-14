@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#68D851"
+        android:orientation="horizontal"
+        >
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+         android:layout_weight="5"
+         android:text="버튼1"
+         android:layout_marginHorizontal="5dp"
+         android:backgroundTint="#6A7077"
+         />
+
+        <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="2"
+         android:text="버튼"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="#6A7077"
+            />
+
+        <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_weight="3"
+         android:text="버튼"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="#6A7077"
+         />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#EDE535"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="버튼"
+            android:layout_weight="4"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="#812F21"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="버튼"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#812F21"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#C6A5E8"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher_foreground"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:text="버튼"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="버튼"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="버튼"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:text="버튼"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="버튼"
+            android:textColor="@color/black"
+            android:backgroundTint="#FBF2F1"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
+

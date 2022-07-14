@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/and02_weight.xml" value="0.358695652173913" />
-        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/and03_weight.xml" value="0.358695652173913" />
+        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/and03_weight.xml" value="0.25" />
+        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/and04_attr.xml" value="0.33" />
+        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/login_activity.xml" value="0.358695652173913" />
+        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/testlinear.xml" value="0.33" />
+        <entry key="..\:/Study_Android/WorkSpace/And04_LinearLayout/app/src/main/res/layout/testlinear2.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
