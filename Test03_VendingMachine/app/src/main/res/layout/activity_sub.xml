@@ -14,7 +14,6 @@
         android:text="자판기 잔돈 반환"
         android:gravity="center"
         android:textSize="20dp"
-
         />
 
     <TextView
@@ -23,6 +22,7 @@
         android:layout_height="wrap_content"
         android:textSize="15dp"
         android:layout_marginBottom="20dp"
+        android:gravity="center"
         />
 
     <TextView
@@ -46,34 +46,11 @@
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:textSize="15dp"
+            android:gravity="center"
             />
 
-        <TextView
-            android:id="@+id/tv_sub3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:textSize="15dp"
-            />
 
-        <TextView
-            android:id="@+id/tv_sub4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:textSize="15dp"
-            />
 
-        <TextView
-            android:id="@+id/tv_sub5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:textSize="15dp"
-            />
 
     </LinearLayout>
 </LinearLayout>
