@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.and10_intentresult">
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,18 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.And10_IntentResult">
-
+        <activity
+            android:name=".TestActivity"
+            android:exported="true" />
         <activity
             android:name=".SubActivity"
             android:exported="true" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-        <!--안드로이드의 4가지  컴포넌트들은 반드시 Androidmanifest환결설정에 있어야만 합니다.
+        <!--
+안드로이드의 4가지  컴포넌트들은 반드시 Androidmanifest환결설정에 있어야만 합니다.
         <activity
             android:name=".SubActivity"
-            android:exported="true" />-->
+            android:exported="true" />
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
