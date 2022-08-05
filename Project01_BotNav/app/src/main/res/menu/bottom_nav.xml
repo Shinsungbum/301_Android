@@ -4,15 +4,11 @@
 
     <!--
 
-    showAsAction 보이는 설정
-    always => 항상 보여주게 처리
-    never => 안보이게 처리
-    ifRoom => 공간이 있을때 표시
-
+        showAsAction 보이는 설정
+        always => 항상 보여주게 처리
+        never => 안보이게 처리
+        ifRoom => 공간이 있을때 표시
     -->
-
-
-
 
     <item android:id="@+id/tab1"
         android:icon="@drawable/user"
@@ -36,8 +32,7 @@
         app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/tab5"
-        android:icon="@drawable/etc"
+        android:icon="@drawable/gear"
         android:title="5"
         app:showAsAction="ifRoom"/>
-
 </menu>

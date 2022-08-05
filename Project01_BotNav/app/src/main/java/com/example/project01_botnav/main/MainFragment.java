@@ -13,36 +13,46 @@ import android.view.ViewGroup;
 import com.example.project01_botnav.R;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 
 public class MainFragment extends Fragment {
-    RecyclerView recv_main;
+    RecyclerView recv_main ;
+    int[] imgArr = {
+      R.drawable.etc,
+      R.drawable.and,
+      R.drawable.gear,
+      R.drawable.profile,
+      R.drawable.shopping,
+      R.drawable.talk,
+      R.drawable.talkblack,
+      R.drawable.ic_launcher_background
+    };
     ArrayList<MainDTO> list = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
+        View v =  inflater.inflate(R.layout.fragment_main, container, false);
         recv_main = v.findViewById(R.id.recv_main);
 
-        list.add(new MainDTO(R.drawable.gear, "신성범", "infp"));
-        list.add(new MainDTO(R.drawable.user, "김성범", "enfp", true));
-        list.add(new MainDTO(R.drawable.etc, "박석범", "isfp"));
-        list.add(new MainDTO(R.drawable.logo, "홍성범", "infp", true));
-        list.add(new MainDTO(R.drawable.shopping, "나성범", "isfp"));
-        list.add(new MainDTO(R.drawable.and, "강성범", "infj", true));
-        list.add(new MainDTO(R.drawable.ic_launcher_background, "강성범", "infj"));
-        list.add(new MainDTO(R.drawable.ic_launcher_foreground, "이성범", "enfp", true));
-        list.add(new MainDTO(R.drawable.talk, "윤성범", "enfp"));
-        list.add(new MainDTO(R.drawable.splashlogo, "남성범", "enfj", true));
+        //mainDTO 10개를 가진 ArrayList 만들기 ,.
+        for(int i=0 ; i < 30 ; i ++ ){
+            int imgIndex = new Random().nextInt(imgArr.length);
+            list.add(new MainDTO(imgArr[imgIndex] , "친구이름" + i , "상태"+ i));
+            if(i%3==0){
+                list.add(new MainDTO(imgArr[imgIndex] , "친구이름" + i , "상태"+ i , true));
+            }
+        }
 
 
-        MainAdapter adapter = new MainAdapter(inflater, list);
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext() , LinearLayoutManager.VERTICAL, false);
 
+        MainAdapter adapter = new MainAdapter(inflater,list);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext() , LinearLayoutManager.VERTICAL,false);
 
         recv_main.setAdapter(adapter);
         recv_main.setLayoutManager(manager);
 
 
-        return v;
+        return v ;
     }
 }

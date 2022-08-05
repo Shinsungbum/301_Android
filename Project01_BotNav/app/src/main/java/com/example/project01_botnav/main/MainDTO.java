@@ -2,9 +2,8 @@ package com.example.project01_botnav.main;
 
 public class MainDTO {
     private int img_id;
-    private String name, msg;
+    private String name , msg;
     private boolean isMusic = false;
-
 
     public MainDTO(int img_id, String name, String msg, boolean isMusic) {
         this.img_id = img_id;
