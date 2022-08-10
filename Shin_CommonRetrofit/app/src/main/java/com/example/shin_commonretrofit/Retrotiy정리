@@ -1,0 +1,26 @@
+Retrofit정리
+-안드로이드 => 미들웨어 접근시 사용할수있는 방식은 여러가지가 있음.
+(미들웨어 : Url요청 시 DB에 대신 접근 해서 정보를  return 줄수있는 툴 , 프로젝트를 의미함 ) = 이클립스(Dynamic Web Project, Spring4...)
+( 안드로이드에서 Http, Https에 접근 할때 사용하는 Lib(API) : Volley, HttpClienct(사용불가), Retrofit (가장 많이 사용 현업) )
+
+앱에서 해야할것 ( 필수 )
+-앱에서 네트워크 통신을 구현하려면 우선 Manifest에 권한 요청 ( 필수 이나 높은 권한을 요구하지는 않음 )
+-UserClearTraix = 앱에서는 기본적으로 Http형태의 Url요청을 전부 막아놨음 사용하려면 UsesClearTrafic을 사용한다고 명시(Manifest)
+
+앱에서 사용할것들(선택)
+- build.gradle ( module ) dependencies 에 추가
+- Gson 사용 할거임
+        implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+- Retrofit
+        implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.3.0' //리턴을 Gson객채를 이용할때 사용
+        implementation group: 'com.squareup.retrofit2', name: 'converter-scalars', version: '2.3.0' // 응답결과 String
+        implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.3.0'  //Retrofit자체 ↑ 두가지 컨버터를 이용한다
+
+
+
+구현 부분
+
+- ApiClient라는 클래스를 만들어서 (이름 규칙x) Retrofit객체의 설정을 넣고 인스턴스화(초기화) 할수있는 클래스를 정의
+- Interface형태로 접속정보나 보낼 정보 등등을  정의해놓은 인터페이스 구조를 만든다. (콜백으로 리턴받음)
+
+==> 나중에 재사용이 편하게 AsynckTask를 이용하여 직접 callback까지 만들기

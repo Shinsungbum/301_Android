@@ -11,7 +11,8 @@ import com.example.project02_iot.conn.ApriClient;
 import java.io.IOException;
 import java.util.HashMap;
 
-// 백그라운드에서 작업을 비동기로 한다.
+// 백그라운드에서 작업을 비동기로 함 => 결과가 나올때까지 서브 쓰레드가 대기상태여서 메인도 같이 기다림.
+// 데이터 건수가 많을때는  ↓ 사용할 예정
 public class CommonAskTask extends AsyncTask<String , String , String> {
     public AsynckTaskCallBack callBack;
     Context context; // 토스트 메세지나 , 프로그레스 다이얼로그 사용 시 필요함.

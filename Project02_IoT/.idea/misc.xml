@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_main.xml" value="0.20104166666666667" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_splash.xml" value="0.2046875" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_tab.xml" value="0.25" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/fragment_call.xml" value="0.20104166666666667" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/menu/menu_action.xml" value="0.33" />
       </map>
     </option>
   </component>
