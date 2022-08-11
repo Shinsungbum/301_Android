@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText edt_id , edt_pw ;
     Button btn_login , btn_join;
     CheckBox chk_login;
-    ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void login(){
-        CommonConn conn = new CommonConn("login.mb", LoginActivity.this, dialog);
+        CommonConn conn = new CommonConn("login.mb", LoginActivity.this);
         conn.addParams("id", edt_id.getText() + "");
         conn.addParams("pw", edt_pw.getText() + "");
         conn.excuteConn(new CommonConn.ConnCallback() {

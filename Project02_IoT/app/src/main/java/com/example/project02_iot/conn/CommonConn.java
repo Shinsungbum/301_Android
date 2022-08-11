@@ -21,7 +21,7 @@ public class CommonConn {
     private ConnCallback callback;
     private Context context;
     private ProgressDialog dialog;
-    public CommonConn(String url, Context context, ProgressDialog dialog) {
+    public CommonConn(String url, Context context) {
         this.url = url;
         params = new HashMap<>();
         this.context = context;
