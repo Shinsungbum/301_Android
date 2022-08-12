@@ -28,7 +28,7 @@ public class CusFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_cus, container, false);
         recv_cus = v.findViewById(R.id.recv_cus);
-
+        recv_select();
         //안쪽에 들어갈 아이템(layout)
         //어댑터 (adapter)
         //모양을 확인 후 => VO(DTO) ArrayList나
@@ -78,6 +78,7 @@ public class CusFragment extends Fragment {
         Log.d("프래그먼트", "onStart: ");
         recv_select();
     }
+
 
 
 }

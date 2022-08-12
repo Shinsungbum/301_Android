@@ -1,6 +1,8 @@
 package com.example.project02_iot.customer;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -24,7 +27,7 @@ public class CusAdapter extends RecyclerView.Adapter<CusAdapter.ViewHolder> {
     LayoutInflater inflater;
     ArrayList<CustomerVO> list;
     Context context;
-    CusFragment cusFragment;
+    CusFragment cusFragment; // new <- 새로운 메모리 번지수를 만들고 참조를 시작한다.
 
     public CusAdapter(LayoutInflater inflater, ArrayList<CustomerVO> list, Context context, CusFragment cusFragment) {
         this.inflater = inflater;
@@ -94,7 +97,7 @@ public class CusAdapter extends RecyclerView.Adapter<CusAdapter.ViewHolder> {
                 }
             });
 
-            btn_update.setOnClickListener(new View.OnClickListener() {
+            holder.btn_update.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, CusDetailActivity.class);
@@ -106,22 +109,54 @@ public class CusAdapter extends RecyclerView.Adapter<CusAdapter.ViewHolder> {
             });
 
 
-            btn_delete.setOnClickListener(new View.OnClickListener() {
+            holder.btn_delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // confirm(web) <=> AlertDialog(And) <- 유저가 어떠한 액션을 했을때 정말로 할것인지 를 최종적으로
+                    //한번 더 확인하기 위한 알림창.
+                    checkDelete(list.get(i).getId());
+                }
+            });
+        }//bind
+
+
+        public void checkDelete(int id){
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("고객 정보 삭제")
+                    .setMessage("정말로 삭제하시겠습니까?")
+                    .setIcon(R.drawable.male);
+            builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    //사용자가 "네" 라는 메세지를 클릭했을 때 처리를 위한것
                     CommonConn conn = new CommonConn("delete.cu", context);
-                    String id = new Gson().toJson(list.get(i).getId());
-                    conn.addParams("id", list.get(i).getId());
+                    conn.addParams("id", id);
                     conn.excuteConn(new CommonConn.ConnCallback() {
                         @Override
                         public void onResult(boolean isResult, String data) {
                             cusFragment.recv_select();
                         }
                     });
-
                 }
             });
+
+            builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    //사용자가 "아니오" 라는 메세지를 클릭했을 때 처리를 위한것
+                    Toast.makeText(context, "취소 되었습니다", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+            AlertDialog dialog = builder.create();//dialog가 생성이 완료됨
+            dialog.show();
+
+
+
         }
+
+
     }
 
 

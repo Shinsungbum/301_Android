@@ -9,9 +9,12 @@
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_splash.xml" value="0.2046875" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/activity_tab.xml" value="0.25" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/dialog_hr.xml" value="0.36614583333333334" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/fragment_call.xml" value="0.20104166666666667" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/fragment_cus.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/fragment_hr.xml" value="0.19739583333333333" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/item_cus_recv.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/layout/item_hr_recv.xml" value="0.19739583333333333" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/menu/menu_action.xml" value="0.33" />
         <entry key="..\:/Study_Android/WorkSpace/Project02_IoT/app/src/main/res/menu/menu_btm_nav.xml" value="0.36614583333333334" />
       </map>
