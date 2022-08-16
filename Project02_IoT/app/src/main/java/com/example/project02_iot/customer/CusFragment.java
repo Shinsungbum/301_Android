@@ -70,8 +70,6 @@ public class CusFragment extends Fragment {
 
     //DetailActivity가 종료가 되고 프래그 먼트와 메인택티비티가 다시보임.
     //어떻게 우리는 알수가 있을까? ↑
-
-
     @Override
     public void onStart() {
         super.onStart();

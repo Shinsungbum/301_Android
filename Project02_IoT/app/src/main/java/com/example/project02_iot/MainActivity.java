@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.example.project02_iot.employees.HrFragment;
 import com.example.project02_iot.customer.CusFragment;
+import com.example.project02_iot.notice.NoticeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         changeFragment(new CusFragment());
 
+
+
         btm_nav = findViewById(R.id.btm_nav);
         btm_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 }else if (item.getItemId() == R.id.menu_emp){
                     fragment = new HrFragment();
                 }else if (item.getItemId() == R.id.menu_noti){
-
+                    fragment = new NoticeFragment();
                 }
                 if(fragment == null) return false;
 

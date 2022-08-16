@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -67,11 +66,11 @@ public class HrAdapter extends RecyclerView.Adapter<HrAdapter.ViewHoler> {
             if (list.get(i).getSalary() < 5000){
                 holder.imgv_hr.setImageResource(R.drawable.d);
             }else if (list.get(i).getSalary() < 10000){
-                holder.imgv_hr.setImageResource(R.drawable.c);
+                holder.imgv_hr.setImageResource(R.drawable.pro3);
             }else if (list.get(i).getSalary() < 15000){
-                holder.imgv_hr.setImageResource(R.drawable.b);
+                holder.imgv_hr.setImageResource(R.drawable.pro2);
             }else if (list.get(i).getSalary() < 20000){
-                holder.imgv_hr.setImageResource(R.drawable.a);
+                holder.imgv_hr.setImageResource(R.drawable.pro1);
             }else {
                 holder.imgv_hr.setImageResource(R.drawable.s);
             }
