@@ -25,6 +25,7 @@ public class CommonAskTask extends AsyncTask<String , String , String> {
     }
 
     public  void addParams(String key, Object value){
+        if (value==null) return;
         this.params.put(key , value);
     }
 

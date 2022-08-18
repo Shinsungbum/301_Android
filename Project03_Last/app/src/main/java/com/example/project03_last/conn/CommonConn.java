@@ -26,6 +26,7 @@ public class CommonConn {
     }
 
     public void addParams(String key, Object value){
+        if(value == null) return;
         params.put(key, value);
     }
 

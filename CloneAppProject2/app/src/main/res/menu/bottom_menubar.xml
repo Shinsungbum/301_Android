@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item1"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:enabled="false"
+        app:showAsAction="ifRoom"
+        android:title="홈"/>
+
+
+ <item
+        android:id="@+id/menu_item2"
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+     android:enabled="false"
+     app:showAsAction="ifRoom"
+        android:title="쇼핑"/>
+
+
+ <item
+        android:id="@+id/menu_item3"
+        android:icon="@drawable/ic_twotone_card_giftcard_24"
+     app:showAsAction="ifRoom"
+        android:title="이벤트"/>
+
+
+ <item
+        android:id="@+id/menu_item4"
+        android:icon="@drawable/ic_baseline_brand_24"
+     app:showAsAction="ifRoom"
+        android:title="브랜드"/>
+
+
+ <item
+        android:id="@+id/menu_item5"
+        android:icon="@drawable/ic_baseline_brand_24"
+     app:showAsAction="ifRoom"
+        android:title="브랜드"/>
+
+
+ <item
+        android:id="@+id/menu_item6"
+        android:icon="@drawable/ic_baseline_brand_24"
+     app:showAsAction="ifRoom"
+        android:title="브랜드"/>
+
+
+
+
+
+</menu>

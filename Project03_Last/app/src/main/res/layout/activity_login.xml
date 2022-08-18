@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".member.LoginActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wh_logo"
+        android:layout_gravity="center"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:hint="UserName"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/edt_pw"
+            android:layout_marginTop="10dp"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:hint="PassWord"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/btn_login"
+        android:backgroundTint="#8B48AF"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="로그인"
+        android:textSize="18dp"/>
+
+
+    <com.navercorp.nid.oauth.view.NidOAuthLoginButton
+        android:layout_gravity="center"
+        android:id="@+id/btn_naver"
+        android:layout_width="280dp"
+        android:layout_height="60dp" />
+
+
+    <ImageView
+        android:id="@+id/btn_kakao"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:src="@drawable/kakao_login_large_wide"/>
+
+    <Button
+        android:id="@+id/btn_join"
+        android:backgroundTint="#8B48AF"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="회원 가입"
+        android:textSize="18dp"/>
+
+
+
+
+</LinearLayout>

@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/drawable-v24/btm_nav_selector.xml" value="0.38229166666666664" />
         <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/drawable-v24/ic_baseline_book_24.xml" value="0.38229166666666664" />
         <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/drawable-v24/ic_baseline_remove_red_eye_24.xml" value="0.38229166666666664" />
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/drawable/border.xml" value="0.22083333333333333" />
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/layout/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/menu/bottom_menubar.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/CloneAppProject2/app/src/main/res/menu/menu_btm_nav.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
