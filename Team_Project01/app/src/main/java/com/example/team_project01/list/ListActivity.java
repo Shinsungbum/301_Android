@@ -19,6 +19,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         recv_list = findViewById(R.id.recv_list);
 
+        //리스트에 가게 정보 임의로 넣음
         ArrayList<ListDTO>  list = new ArrayList<>();
         list.add(new ListDTO(R.drawable.spaghetti, "한식1", "성범비빔밥1", "5.0(999)+", "5km(농성동)"));
         list.add(new ListDTO(R.drawable.spaghetti, "한식2", "성범비빔밥2", "4.0(999)+", "4km(농성동)"));
@@ -30,7 +31,9 @@ public class ListActivity extends AppCompatActivity {
         list.add(new ListDTO(R.drawable.spaghetti, "한식8", "성범비빔밥8", "3.0(999)+", "8km(농성동)"));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getLayoutInflater().getContext(), RecyclerView.VERTICAL, false);
-        ListAdapter adapter = new ListAdapter(getLayoutInflater() , list);
+        ListAdapter adapter = new ListAdapter(getLayoutInflater() , list, ListActivity.this);
+
+
 
         recv_list.setLayoutManager(layoutManager);
         recv_list.setAdapter(adapter);

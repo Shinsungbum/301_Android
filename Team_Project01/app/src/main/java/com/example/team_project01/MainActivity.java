@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 }else if(itemIndex == 1) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new SearchFragment()).commit();
                 }else if(itemIndex == 2) {
-                    Toast.makeText(MainActivity.this, "내정보", Toast.LENGTH_SHORT).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new MyinfoFragment()).commit();
                 }else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new MoreFragment()).commit();
@@ -74,7 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
+                if(itemIndex == 0) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+                }else if(itemIndex == 1) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new SearchFragment()).commit();
+                }else if(itemIndex == 2) {
 
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new MyinfoFragment()).commit();
+                }else {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, new MoreFragment()).commit();
+                }
             }
         });
     }
