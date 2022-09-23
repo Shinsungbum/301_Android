@@ -59,15 +59,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             tv_store_name = v.findViewById(R.id.tv_store_name);
             tv_point = v.findViewById(R.id.tv_point);
             tv_location = v.findViewById(R.id.tv_location);
-            store_list = v.findViewById(R.id.store_list);
+            store_list = v.findViewById(R.id.store_detail);
         }
 
         public void bind(@NonNull ViewHolder holder, int i){
-            imag_store_imag.setImageResource(list.get(i).getImag_store_imag());
-            tv_category.setText(list.get(i).getTv_category());
-            tv_store_name.setText(list.get(i).getTv_store_name());
-            tv_point.setText(list.get(i).getTv_point());
-            tv_location.setText(list.get(i).getTv_location());
+            tv_category.setText(category(list.get(i).getStore_category()));
+            tv_store_name.setText(list.get(i).getStore_name().toString());
+            tv_point.setText(list.get(i).getOpen_close().toString());
+            tv_location.setText(list.get(i).getStore_addr().toString());
 
             store_list.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -78,5 +77,20 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                 }
             });
         }
+
+        public String category(int ctg){
+            if (ctg == 4){
+                return "중식";
+            }else if (ctg == 2){
+                return "한식";
+            }else if (ctg == 5){
+                return "일식";
+            }else {
+                return "카페";
+            }
+        }
+
+
+
     }
 }
