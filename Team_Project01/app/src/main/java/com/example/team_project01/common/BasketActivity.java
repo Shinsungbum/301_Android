@@ -33,6 +33,7 @@ public class BasketActivity extends AppCompatActivity {
         recv_basket.setLayoutManager(layoutManager);
         recv_basket.setAdapter(adapter);
 
+        //뒤로가기
         bask_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

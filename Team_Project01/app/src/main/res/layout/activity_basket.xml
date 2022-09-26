@@ -44,13 +44,7 @@
         android:layout_height="wrap_content"/>
 
 
-    <Button
-        android:layout_marginHorizontal="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#F25C05"
-        android:text="+더 담으러 가기" />
+
 
 </LinearLayout>
 

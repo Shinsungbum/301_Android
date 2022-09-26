@@ -7,26 +7,50 @@
     android:orientation="vertical"
     tools:context=".store.StoreActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.AppCompat.Light">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/store_toolbar"
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu_store">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="17dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="가게이름"
-                android:textColor="@color/black" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-        </androidx.appcompat.widget.Toolbar>
 
-    </com.google.android.material.appbar.AppBarLayout>
+                <TextView
+                    android:id="@+id/tv_home_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가게이름"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/store_basket"
+                android:layout_width="29dp"
+                android:layout_height="25dp"
+                android:src="@drawable/shopping"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -95,6 +119,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/store_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="황남비빔밥"
