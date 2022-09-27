@@ -7,18 +7,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.team_project01.R;
+import com.example.team_project01.common.BasketActivity;
 import com.example.team_project01.common.BasketVO;
+import com.example.team_project01.list.Store_infoDTO;
 import com.google.android.material.tabs.TabLayout;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class StoreActivity extends AppCompatActivity {
@@ -29,7 +34,8 @@ public class StoreActivity extends AppCompatActivity {
     View layout_store_info;
     LinearLayout layout_store_tab_info, layout_store_tab_review;
     Spinner store_spinner;
-    TextView store_tv_spinner, store_name;
+    TextView store_tv_spinner, store_name1,store_name2;
+    ImageView store_basket;
 
     String[] items = {"최신순", "평점 높은 순", "평점 낮은 순"};
 
@@ -46,26 +52,45 @@ public class StoreActivity extends AppCompatActivity {
         layout_store_tab_review = findViewById(R.id.layout_store_tab_review);
         store_spinner = findViewById(R.id.store_spinner);
         store_tv_spinner = findViewById(R.id.store_tv_spinner);
-        store_name = findViewById(R.id.store_name);
+        store_name1 = findViewById(R.id.store_name1);
+        store_name2 = findViewById(R.id.store_name2);
+        store_basket = findViewById(R.id.store_basket);
 
 
 
         Intent intent = getIntent();
         BasketVO basketDTO = (BasketVO) intent.getSerializableExtra("basketDTO");
-        ArrayList<StoreMenuDTO> list = (ArrayList<StoreMenuDTO>) intent.getSerializableExtra("list");
+        ArrayList<StoreMenuDTO> list = (ArrayList<StoreMenuDTO>) intent.getSerializableExtra("list1");
 
+        //가게정보
+        Store_infoDTO vo = (Store_infoDTO) intent.getSerializableExtra("vo");
+
+        store_name1.setText(vo.getStore_name());
+        store_name2.setText(vo.getStore_name());
 
 
 
         //기본화면
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(StoreActivity.this, RecyclerView.VERTICAL, false);
-        StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, basketDTO);
+        StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, StoreActivity.this);
+
         recv_store_menu.setLayoutManager(layoutManager);
         recv_store_menu.setAdapter(adapter);
 
         recv_store_menu.setVisibility(View.VISIBLE);
         layout_store_tab_info.setVisibility(View.GONE);
         layout_store_tab_review.setVisibility(View.GONE);
+
+        store_basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<StoreMenuDTO> basketlist = adapter.getBasketlist();
+                Intent intent1 = new Intent(StoreActivity.this, BasketActivity.class);
+                intent1.putExtra("basketlist", basketlist);
+                startActivity(intent1);
+            }
+        });
+
 
 
         //탭
@@ -75,7 +100,7 @@ public class StoreActivity extends AppCompatActivity {
                 int position =  tab.getPosition();
                 if(position == 0) {
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(StoreActivity.this, RecyclerView.VERTICAL, false);
-                    StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, basketDTO);
+                    StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, StoreActivity.this);
                     recv_store_menu.setLayoutManager(layoutManager);
                     recv_store_menu.setAdapter(adapter);
 
@@ -109,7 +134,7 @@ public class StoreActivity extends AppCompatActivity {
                 int position =  tab.getPosition();
                 if(position == 0) {
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(StoreActivity.this, RecyclerView.VERTICAL, false);
-                    StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, basketDTO);
+                    StoreMenuAdapter adapter = new StoreMenuAdapter(list, getLayoutInflater(), StoreActivity.this, StoreActivity.this);
                     recv_store_menu.setLayoutManager(layoutManager);
                     recv_store_menu.setAdapter(adapter);
 
@@ -136,6 +161,8 @@ public class StoreActivity extends AppCompatActivity {
 
 
     }
+
+
 
     //뒤로가기 버튼 활성화
     @Override

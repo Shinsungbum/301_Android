@@ -86,11 +86,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                         public void onResult(boolean isResult, String data) {
                             if (isResult){
                                 Log.d("가게별 메뉴리스트", "onResult: " + data);
-                                ArrayList<StoreMenuDTO> list = new Gson().fromJson(data,
+                                ArrayList<StoreMenuDTO> list1 = new Gson().fromJson(data,
                                         new TypeToken<ArrayList<StoreMenuDTO>>(){}.getType());
                                 Intent intent = new Intent(context, StoreActivity.class);
                                 intent.putExtra("basketDTO", basketDTO);
-                                intent.putExtra("list", list);
+                                intent.putExtra("list1", list1);
+                                intent.putExtra("vo", list.get(i));
                                 context.startActivity(intent);
 
                             }

@@ -2,7 +2,9 @@ package com.example.team_project01.store;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +12,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.team_project01.R;
+import com.example.team_project01.common.BasketActivity;
 import com.example.team_project01.common.BasketVO;
+import com.example.team_project01.common.CommonVal;
+import com.example.team_project01.conn.CommonConn;
+import com.example.team_project01.list.Store_infoDTO;
 
 import java.util.ArrayList;
 
@@ -24,14 +31,15 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
     ArrayList<StoreMenuDTO> list;
     LayoutInflater inflater;
     Activity activity;
-    BasketVO basketDTO;
+    Context context;
+    ArrayList<StoreMenuDTO> basketlist = new ArrayList<>();
 
 
-    public StoreMenuAdapter(ArrayList<StoreMenuDTO> list, LayoutInflater inflater, Activity activity, BasketVO basketDTO) {
+    public StoreMenuAdapter(ArrayList<StoreMenuDTO> list, LayoutInflater inflater, Activity activity, Context context) {
         this.list = list;
         this.inflater = inflater;
         this.activity = activity;
-        this.basketDTO = basketDTO;
+        this.context = context;
     }
 
     @NonNull
@@ -53,7 +61,7 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgv_menu_image;
-        TextView tv_menu_name, tv_menu_price;
+        TextView tv_menu_name, tv_menu_price, store_name1, store_name2;
         LinearLayout menu_cho;
 
 
@@ -64,15 +72,14 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
             tv_menu_name = v.findViewById(R.id.tv_menu_name);
             tv_menu_price = v.findViewById(R.id.tv_menu_price);
             menu_cho = v.findViewById(R.id.menu_cho);
-
+            store_name1 = v.findViewById(R.id.store_name1);
+            store_name2 = v.findViewById(R.id.store_name2);
 
         }
 
-        public void bind(@NonNull ViewHolder h, int i) {
-            h.tv_menu_name.setText(list.get(i).getMenu_name());
-            h.tv_menu_price.setText(list.get(i).getPrice() + "");
-
-
+        public void bind(@NonNull ViewHolder h, int pod) {
+            h.tv_menu_name.setText(list.get(pod).getMenu_name());
+            h.tv_menu_price.setText(list.get(pod).getPrice() + "");
 
 
             //메뉴 클릭시 다이얼로그 뛰우기
@@ -83,6 +90,10 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Log.d("TAG", "onClick: 네");
+                            basketlist.add(list.get(pod));
+                            Toast.makeText(context, basketlist.get(pod).getMenu_name() + " 장바구니에 담겼습니다", Toast.LENGTH_SHORT).show();
+
+                            Log.d("TAG", "onClick: " + basketlist.size());
                         }
                     };
                     DialogInterface.OnClickListener cancle = new DialogInterface.OnClickListener() {
@@ -99,6 +110,15 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
                             .show();
                 }
             });
+
+
+
+
         }
+
+
+    }
+    public ArrayList<StoreMenuDTO> getBasketlist(){
+        return basketlist;
     }
 }

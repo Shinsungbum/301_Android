@@ -1,6 +1,8 @@
 package com.example.team_project01.list;
 
-public class Store_infoDTO {
+import java.io.Serializable;
+
+public class Store_infoDTO implements Serializable {
     private int store_code, id, store_category;
     private String  store_name, store_tel, open_close, store_addr, store_comment, store_image, store_logo;
 

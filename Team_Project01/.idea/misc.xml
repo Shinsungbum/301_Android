@@ -7,7 +7,7 @@
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/drawable/ic_nav_order.xml" value="0.22395833333333334" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/drawable/shape.xml" value="0.22395833333333334" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_address.xml" value="0.2907608695652174" />
-        <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_basket.xml" value="0.21041666666666667" />
+        <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_basket.xml" value="0.18" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_join.xml" value="0.36272727272727273" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_like.xml" value="0.1723684210526316" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/activity_list.xml" value="0.2726449275362319" />
@@ -38,7 +38,7 @@
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/fragment_order.xml" value="0.1723684210526316" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/fragment_order_history2.xml" value="0.1723684210526316" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/fragment_search.xml" value="0.4684147794994041" />
-        <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/item_basket_recv.xml" value="0.21041666666666667" />
+        <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/item_basket_recv.xml" value="0.2" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/item_list_recv.xml" value="0.5" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/item_more_recv.xml" value="0.67" />
         <entry key="..\:/Study_Android/WorkSpace/Team_Project01/app/src/main/res/layout/item_noti_pager.xml" value="0.4865616311399444" />
