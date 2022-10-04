@@ -28,6 +28,7 @@
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true">
     <LinearLayout
+
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -35,7 +36,7 @@
 
             android:layout_margin="10dp"
             android:gravity="center_vertical"
-            android:layout_weight="5"
+            android:layout_weight="3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -57,12 +58,11 @@
 
 
         <ImageView
-            android:backgroundTint="#F25C05"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:background="@drawable/gift"/>
+            android:src="@drawable/gift"/>
     </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -86,7 +86,7 @@
 
                 android:layout_margin="10dp"
                 android:gravity="center_vertical"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -108,12 +108,11 @@
 
 
             <ImageView
-                android:backgroundTint="#F25C05"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:background="@drawable/takeout"/>
+                android:src="@drawable/pack"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

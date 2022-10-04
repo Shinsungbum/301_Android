@@ -1,54 +1,87 @@
 package com.example.team_project01.list;
 
 public class ListDTO {
-    private int imag_store_imag;
-    private String tv_category, tv_store_name, tv_point, tv_location;
+    private int store_code, id, store_category;
+    private String  store_name, store_tel, open_close, store_addr, store_comment, store_image, store_logo;
 
-    public ListDTO(int imag_store_imag, String tv_category, String tv_store_name, String tv_point, String tv_location) {
-        this.imag_store_imag = imag_store_imag;
-        this.tv_category = tv_category;
-        this.tv_store_name = tv_store_name;
-        this.tv_point = tv_point;
-        this.tv_location = tv_location;
+
+    public int getStore_code() {
+        return store_code;
     }
 
-    public int getImag_store_imag() {
-        return imag_store_imag;
+    public void setStore_code(int store_code) {
+        this.store_code = store_code;
     }
 
-    public void setImag_store_imag(int imag_store_imag) {
-        this.imag_store_imag = imag_store_imag;
+    public int getId() {
+        return id;
     }
 
-    public String getTv_category() {
-        return tv_category;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setTv_category(String tv_category) {
-        this.tv_category = tv_category;
+    public int getStore_category() {
+        return store_category;
     }
 
-    public String getTv_store_name() {
-        return tv_store_name;
+    public void setStore_category(int store_category) {
+        this.store_category = store_category;
     }
 
-    public void setTv_store_name(String tv_store_name) {
-        this.tv_store_name = tv_store_name;
+    public String getStore_name() {
+        return store_name;
     }
 
-    public String getTv_point() {
-        return tv_point;
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
     }
 
-    public void setTv_point(String tv_point) {
-        this.tv_point = tv_point;
+    public String getStore_tel() {
+        return store_tel;
     }
 
-    public String getTv_location() {
-        return tv_location;
+    public void setStore_tel(String store_tel) {
+        this.store_tel = store_tel;
     }
 
-    public void setTv_location(String tv_location) {
-        this.tv_location = tv_location;
+    public String getOpen_close() {
+        return open_close;
+    }
+
+    public void setOpen_close(String open_close) {
+        this.open_close = open_close;
+    }
+
+    public String getStore_addr() {
+        return store_addr;
+    }
+
+    public void setStore_addr(String store_addr) {
+        this.store_addr = store_addr;
+    }
+
+    public String getStore_comment() {
+        return store_comment;
+    }
+
+    public void setStore_comment(String store_comment) {
+        this.store_comment = store_comment;
+    }
+
+    public String getStore_image() {
+        return store_image;
+    }
+
+    public void setStore_image(String store_image) {
+        this.store_image = store_image;
+    }
+
+    public String getStore_logo() {
+        return store_logo;
+    }
+
+    public void setStore_logo(String store_logo) {
+        this.store_logo = store_logo;
     }
 }

@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +17,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.team_project01.R;
-import com.example.team_project01.common.BasketVO;
-import com.example.team_project01.conn.CommonAskTask;
-import com.example.team_project01.list.Store_infoDTO;
-import com.example.team_project01.conn.CommonAskTask;
-import com.google.android.gms.common.internal.service.Common;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
@@ -37,9 +28,7 @@ public class SearchFragment extends Fragment {
     LinearLayout layout_category;
     RecyclerView recv_search;
 
-
-    public ArrayList<Store_infoDTO> list = new ArrayList<>();
-
+    public ArrayList<SearchDTO> searchList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,15 +64,15 @@ public class SearchFragment extends Fragment {
 
     //검색어 입력중
     public void searching() {
-
-        CommonAskTask askTask = new CommonAskTask(getContext(), "andSearchList");
-        askTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
-            @Override
-            public void onResult(String data, boolean isResult) {
-                list = new Gson().fromJson(data, new TypeToken<ArrayList<Store_infoDTO>>(){}.getType());
-            }
-        });
-
+        searchList.add(new SearchDTO("교촌치킨"));
+        searchList.add(new SearchDTO("떡볶이"));
+        searchList.add(new SearchDTO("신전떡볶이"));
+        searchList.add(new SearchDTO("초밥"));
+        searchList.add(new SearchDTO("네네치킨"));
+        searchList.add(new SearchDTO("푸라닭치킨"));
+        searchList.add(new SearchDTO("아주커치킨"));
+        searchList.add(new SearchDTO("동대문엽기떡볶이"));
+        searchList.add(new SearchDTO("자매떡볶이"));
 
         searchview.setOnSearchClickListener(new View.OnClickListener() {
             @Override
@@ -110,25 +99,19 @@ public class SearchFragment extends Fragment {
 
                     @Override
                     public boolean onQueryTextChange(String newText) {
-
-                        ArrayList<Store_infoDTO> filter = new ArrayList<>();
-                        for (int i = 0; i < list.size(); i++) {
-                            Store_infoDTO vo = list.get(i);
-                            vo.setStore_code(list.get(i).getStore_code());
-                            if(vo.getStore_name().toLowerCase().contains(newText.toLowerCase())) {
-
-                                filter.add(vo);
+                        ArrayList<SearchDTO> filterSearch = new ArrayList<>();
+                        for (int i = 0; i < searchList.size(); i++) {
+                            SearchDTO dto = searchList. get(i);
+                            if (dto.getString().toLowerCase().contains(newText.toLowerCase())) {
+                                filterSearch.add(dto);
                             }
-                        }
+                        }//for
 
                         layout_category.setVisibility(View.GONE);
                         search_listview.setVisibility(View.VISIBLE);
 
-                        BasketVO basketDTO = (BasketVO) new Intent().getSerializableExtra("basketDTO");
-                        SearchAdapter adapter = new SearchAdapter(filter, getLayoutInflater(), newText, getContext(), basketDTO);
+                        SearchAdapter adapter = new SearchAdapter(filterSearch, getLayoutInflater(), newText);
                         search_listview.setAdapter(adapter);
-
-
                         return false;
                     }
                 });

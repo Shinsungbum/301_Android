@@ -15,24 +15,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.team_project01.R;
 import com.example.team_project01.common.BasketActivity;
-import com.example.team_project01.common.BasketAdapter;
 import com.example.team_project01.common.BasketVO;
 import com.example.team_project01.common.CommonVal;
-import com.example.team_project01.conn.CommonAskTask;
 import com.example.team_project01.conn.CommonConn;
 import com.example.team_project01.list.Store_infoDTO;
-import com.example.team_project01.order.Order_infoVO;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.ViewHolder> {
 
@@ -40,17 +32,14 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
     LayoutInflater inflater;
     Activity activity;
     Context context;
-    Order_infoVO vo;
-    ArrayList<BasketVO> list1;
+    ArrayList<StoreMenuDTO> basketlist = new ArrayList<>();
 
-    public StoreMenuAdapter(ArrayList<StoreMenuDTO> list, LayoutInflater inflater, Activity activity, Context context, Order_infoVO vo) {
 
+    public StoreMenuAdapter(ArrayList<StoreMenuDTO> list, LayoutInflater inflater, Activity activity, Context context) {
         this.list = list;
         this.inflater = inflater;
         this.activity = activity;
         this.context = context;
-        this.vo = vo;
-
     }
 
     @NonNull
@@ -97,42 +86,16 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
             menu_cho.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
                     DialogInterface.OnClickListener confirm = new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            Log.d("TAG", "onClick: 네");
+                            basketlist.add(list.get(pod));
+                            Toast.makeText(context, basketlist.get(pod).getMenu_name() + " 장바구니에 담겼습니다", Toast.LENGTH_SHORT).show();
 
-                            CommonAskTask askTask = new CommonAskTask(context, "andBasket");
-                            askTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
-                                @Override
-                                public void onResult(String data, boolean isResult) {
-                                    list1 = new Gson().fromJson(data,
-                                            new TypeToken<ArrayList<BasketVO>>() {
-                                            }.getType());
-
-                                    if (qu(h, pod)) {
-                                        Toast.makeText(context, "이미 장바구니에 있습니다", Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        CommonAskTask commonAskTask = new CommonAskTask(context, "andBasketInsert");
-                                        commonAskTask.addParams("menu", new Gson().toJson(list.get(pod)));
-                                        commonAskTask.addParams("id", CommonVal.loginInfo.getId());
-                                        commonAskTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
-                                            @Override
-                                            public void onResult(String data, boolean isResult) {
-
-                                            }
-                                        });
-                                    }
-
-
-                                }
-                            });
-
+                            Log.d("TAG", "onClick: " + basketlist.size());
                         }
-
                     };
-
                     DialogInterface.OnClickListener cancle = new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -149,22 +112,13 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
             });
 
 
+
+
         }
 
 
     }
-
-    public boolean qu(@NonNull ViewHolder h, int pod){
-        boolean qu = false;
-        for (int j = 0; j < list1.size(); j++) {
-            if (list1.get(j).getMenu_code() == list.get(pod).getMenu_id()) {
-                qu = true;
-                return qu;
-            }
-
-        }
-        
-        return qu;
+    public ArrayList<StoreMenuDTO> getBasketlist(){
+        return basketlist;
     }
-
 }

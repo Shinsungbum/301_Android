@@ -88,7 +88,7 @@
                 android:maxDate="11/18/2022"
                 android:layout_gravity="center"
                 android:id="@+id/calendarView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
@@ -160,7 +160,6 @@
                     android:orientation="horizontal">
 
                     <android.widget.Button
-                        android:id="@+id/order1000"
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
@@ -169,29 +168,32 @@
                         android:layout_height="wrap_content"
                         android:text="10:00"/>
 
-                    <android.widget.Button
-                        android:id="@+id/order1030"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="10:30"/>
-                    <android.widget.Button
-                        android:id="@+id/order1100"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="11:00"/>
-                    <android.widget.Button
-                        android:id="@+id/order1130"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -213,43 +215,47 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <android.widget.Button
-                        android:id="@+id/order1200"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="12:00"/>
 
-                    <android.widget.Button
-                        android:id="@+id/order1230"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="12:30"/>
-                    <android.widget.Button
-                        android:id="@+id/order0100"
+                        android:text="1:00"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="01:00"/>
-                    <android.widget.Button
-                        android:id="@+id/order0130"
+                        android:text="1:30"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="01:30"/>
+                        android:text="2:00"/>
                 </LinearLayout>
 
 
@@ -259,43 +265,46 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <android.widget.Button
-                        android:id="@+id/order0200"
+                    <TextView
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="02:00"/>
+                        android:text="2:30"/>
 
-                    <android.widget.Button
-                        android:id="@+id/order0230"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="02:30"/>
-                    <android.widget.Button
-                        android:id="@+id/order0300"
+                        android:text="3:00"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="03:00"/>
-                    <android.widget.Button
-                        android:id="@+id/order0330"
+                        android:text="4:30"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="03:30"/>
+                        android:text="5:00"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -304,43 +313,46 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <android.widget.Button
-                        android:id="@+id/order0400"
+                    <TextView
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="04:00"/>
+                        android:text="5:30"/>
 
-                    <android.widget.Button
-                        android:id="@+id/order0430"
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="04:30"/>
-                    <android.widget.Button
-                        android:id="@+id/order0500"
+                        android:text="6:00"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="05:00"/>
-                    <android.widget.Button
-                        android:id="@+id/order0530"
+                        android:text="7:30"/>
+                    <TextView
+
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="05:30"/>
+                        android:text="8:00"/>
                 </LinearLayout>
             </LinearLayout>
             <View
@@ -360,7 +372,6 @@
                     android:layout_height="20dp"
                     android:src="@drawable/member"/>
                 <TextView
-                    android:id="@+id/order_human"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:textColor="#000"
@@ -400,29 +411,55 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <android.widget.Button
-                        android:id="@+id/pe2"
-                        android:textSize="18dp"
-                        android:text="2인"
-                        android:layout_margin="5dp"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:background="@drawable/click_time_shape"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
+                    <TextView
 
-                    <android.widget.Button
-                        android:id="@+id/pe4"
-                        android:textSize="18dp"
-                        android:text="4인"
+                        android:id="@+id/res_two"
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
+                        android:padding="10dp"
                         android:background="@drawable/click_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        />
+                        android:text="2인"/>
+                    <TextView
+                        android:id="@+id/res_two2"
+                        android:visibility="gone"
+                        android:textColor="#fff"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/select_time_shpae"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2인"/>
+
+
+                    <TextView
+                        android:id="@+id/res_five"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/non_time_shape"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5인"/>
+
+
+                    <TextView
+                        android:id="@+id/res_five2"
+                        android:visibility="gone"
+                        android:textColor="#fff"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/select_time_shpae"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5인"/>
 
                 </LinearLayout>
 
@@ -432,31 +469,55 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <android.widget.Button
-                        android:id="@+id/pe3"
-                        android:textSize="18dp"
-                        android:text="3인"
+                    <TextView
+                        android:id="@+id/res_three"
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/click_time_shape"
+                        android:padding="10dp"
+                        android:background="@drawable/non_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        />
+                        android:text="3인"/>
+                    <TextView
+                        android:id="@+id/res_three2"
+                        android:visibility="gone"
+                        android:textColor="#fff"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/select_time_shpae"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3인"/>
 
-                    <android.widget.Button
-                        android:id="@+id/pe5"
-                        android:textSize="18dp"
-                        android:text="5인"
+
+                    <TextView
+                        android:id="@+id/res_six"
                         android:layout_margin="5dp"
                         android:gravity="center"
                         android:layout_weight="1"
-                        android:background="@drawable/click_time_shape"
+                        android:padding="10dp"
+                        android:background="@drawable/non_time_shape"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        />
+                        android:text="6인"/>
                 </LinearLayout>
 
+
+                <TextView
+                    android:id="@+id/res_six2"
+                    android:visibility="gone"
+                    android:textColor="#fff"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:background="@drawable/select_time_shpae"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6인"/>
 
             </LinearLayout>
             <LinearLayout
