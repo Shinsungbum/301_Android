@@ -9,11 +9,16 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.team_project01.R;
+
+import com.example.team_project01.common.CommonVal;
+import com.example.team_project01.conn.CommonAskTask;
+import com.example.team_project01.store.AndBookmarkVO;
+import com.example.team_project01.store.StoreActivity;
+
 import com.example.team_project01.common.BasketVO;
 import com.example.team_project01.conn.CommonConn;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
@@ -26,7 +31,6 @@ public class ListActivity extends AppCompatActivity {
         recv_list = findViewById(R.id.recv_list);
 
         recv_select();
-
 
 
 
@@ -53,8 +57,6 @@ public class ListActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
 
     }

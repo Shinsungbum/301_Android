@@ -11,6 +11,14 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.MenuItem;
+
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.example.team_project01.common.MapActivity;
+
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -27,8 +35,12 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
 public class MainActivity extends AppCompatActivity {
 
 
+    LinearLayout home_map;
     FrameLayout container;
     SpaceNavigationView bottom_nav;
+    TextView tv_home_address;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         container = findViewById(R.id.container);
         bottom_nav = (SpaceNavigationView) findViewById(R.id.bottom_nav);
+
+        home_map = findViewById(R.id.home_map);
+        tv_home_address = findViewById(R.id.tv_home_address);
+
+
 
         //하단 네비게이션 버튼 아이디 찾아주기
         bottom_nav.initWithSaveInstanceState(savedInstanceState);
@@ -51,6 +68,15 @@ public class MainActivity extends AppCompatActivity {
         //어플 메인화면
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
 
+        //상단 지도 눌렀을 때
+        home_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //하단네비바 클릭시
         bottom_nav.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
@@ -61,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int itemIndex, String itemName) {
                 if(itemIndex == 0) {
+
+                    home_map.setVisibility(View.VISIBLE);
+
+
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
                 }else if(itemIndex == 1) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, new SearchFragment()).commit();
@@ -85,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override
