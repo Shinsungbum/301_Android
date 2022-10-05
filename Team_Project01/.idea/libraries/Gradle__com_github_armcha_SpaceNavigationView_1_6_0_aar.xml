@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.armcha:SpaceNavigationView:1.6.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f9f509d39e21a283886108177b84ddc7/transformed/jetified-SpaceNavigationView-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f9f509d39e21a283886108177b84ddc7/transformed/jetified-SpaceNavigationView-1.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f9f509d39e21a283886108177b84ddc7/transformed/jetified-SpaceNavigationView-1.6.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/00c24e8354d70bf4cba311acc754552a/transformed/jetified-SpaceNavigationView-1.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/00c24e8354d70bf4cba311acc754552a/transformed/jetified-SpaceNavigationView-1.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/00c24e8354d70bf4cba311acc754552a/transformed/jetified-SpaceNavigationView-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce8dc4ecb450029493cb43bf3a49e8e2/transformed/jetified-SpaceNavigationView-1.6.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ce8dc4ecb450029493cb43bf3a49e8e2/transformed/jetified-SpaceNavigationView-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce8dc4ecb450029493cb43bf3a49e8e2/transformed/jetified-SpaceNavigationView-1.6.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6c64ee8b8201d6625c2d1830fb7ff9b6/transformed/jetified-SpaceNavigationView-1.6.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6c64ee8b8201d6625c2d1830fb7ff9b6/transformed/jetified-SpaceNavigationView-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6c64ee8b8201d6625c2d1830fb7ff9b6/transformed/jetified-SpaceNavigationView-1.6.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.armcha/SpaceNavigationView/1.6.0/f3e0325da97b14552fdd10cf50ab5b3fea567/SpaceNavigationView-1.6.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.armcha/SpaceNavigationView/1.6.0/817fa214b00e27b4ad7383d09557dfd519510b90/SpaceNavigationView-1.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
