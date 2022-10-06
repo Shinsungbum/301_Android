@@ -11,13 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.team_project01.R;
 import com.example.team_project01.conn.CommonAskTask;
+import com.example.team_project01.store.StoreMenuDTO;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
@@ -156,4 +155,5 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.ViewHolder
     public String getprice(){
         return (String) basket_total_price.getText();
     }
+
 }

@@ -13,14 +13,12 @@ import com.example.team_project01.common.BasketVO;
 
 import java.util.ArrayList;
 
-public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.ViewHolder>{
+public class ManagerOrderDetailAdapter extends RecyclerView.Adapter<ManagerOrderDetailAdapter.ViewHolder>{
     LayoutInflater inflater;
-    Order_infoVO vo;
     ArrayList<BasketVO> list;
 
-    public OrderDetailAdapter(LayoutInflater inflater, Order_infoVO vo, ArrayList<BasketVO> list) {
+    public ManagerOrderDetailAdapter(LayoutInflater inflater, ArrayList<BasketVO> list) {
         this.inflater = inflater;
-        this.vo = vo;
         this.list = list;
     }
 
@@ -55,5 +53,4 @@ public class OrderDetailAdapter extends RecyclerView.Adapter<OrderDetailAdapter.
             menu_price.setText(list.get(i).getMenu_price() + "원");
         }
     }
-
 }

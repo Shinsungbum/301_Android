@@ -1,15 +1,8 @@
 package com.example.team_project01.order;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
-
-import android.os.Bundle;
-
-import com.example.team_project01.R;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,12 +11,10 @@ import android.widget.Toast;
 
 import com.example.team_project01.R;
 import com.example.team_project01.common.BasketVO;
-import com.example.team_project01.conn.CommonAskTask;
-import com.naver.maps.map.overlay.Overlay;
 
 import java.util.ArrayList;
 
-public class BillActivity extends AppCompatActivity implements View.OnClickListener {
+public class BillActivity extends AppCompatActivity implements View.OnClickListener{
     ImageView bill_cash, bill_pay, bill_card;
     TextView bill_price, bill_price2, bill_payment;
     int cho_num = 0;
@@ -65,8 +56,6 @@ public class BillActivity extends AppCompatActivity implements View.OnClickListe
                 intent1.putExtra("store_name", store_name);
 
                 startActivity(intent1);
-
-
             }
         });
 

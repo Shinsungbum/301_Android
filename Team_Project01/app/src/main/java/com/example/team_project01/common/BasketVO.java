@@ -7,6 +7,7 @@ public class BasketVO implements Serializable {
     private String menu_name, menu_image;
 
 
+
     public int getTotal_price() {
         return total_price;
     }
@@ -86,6 +87,4 @@ public class BasketVO implements Serializable {
     public void setMenu_id(int menu_id) {
         this.menu_id = menu_id;
     }
-
-
 }

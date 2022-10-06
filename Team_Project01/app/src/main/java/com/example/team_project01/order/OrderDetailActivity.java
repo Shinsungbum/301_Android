@@ -4,27 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
-import com.example.team_project01.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.team_project01.R;
 import com.example.team_project01.common.BasketVO;
+import com.example.team_project01.common.CommonVal;
 import com.example.team_project01.conn.CommonAskTask;
-import com.example.team_project01.conn.CommonConn;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
-
 
 public class OrderDetailActivity extends AppCompatActivity {
     TextView order_detail_store_name, order_detail_date, order_detail_order_time
             , total_price, order_peple, phone_number;
     RecyclerView recv_order_detail;
+
+    Order_infoVO vo;
+    ArrayList<BasketVO> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +35,9 @@ public class OrderDetailActivity extends AppCompatActivity {
         phone_number = findViewById(R.id.phone_number);
 
         Intent intent = getIntent();
-        Order_infoVO vo = (Order_infoVO) intent.getSerializableExtra("vo");
+        vo = (Order_infoVO) intent.getSerializableExtra("vo");
         String store_name = intent.getStringExtra("store_name");
-        ArrayList<BasketVO> list = (ArrayList<BasketVO>) intent.getSerializableExtra("list");
+        list = (ArrayList<BasketVO>) intent.getSerializableExtra("list");
 
         phone_number.setText(vo.getPhone());
         order_peple.setText(vo.getOrder_peple() + "");
@@ -57,11 +54,18 @@ public class OrderDetailActivity extends AppCompatActivity {
 
 
         CommonAskTask askTask = new CommonAskTask(OrderDetailActivity.this, "andBasketDeleteAll");
+        askTask.addParams("id", CommonVal.loginInfo.getId());
         askTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
             @Override
             public void onResult(String data, boolean isResult) {
 
             }
         });
+    }
+    public ArrayList<BasketVO> getbasketList(){
+        return list;
+    }
+    public Order_infoVO getbasketVO(){
+        return vo;
     }
 }

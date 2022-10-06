@@ -20,8 +20,7 @@ import android.widget.Toast;
 import com.example.team_project01.R;
 import com.example.team_project01.common.BasketVO;
 import com.example.team_project01.common.CommonVal;
-import com.example.team_project01.conn.CommonConn;
-import com.example.team_project01.store.StoreMenuDTO;
+import com.example.team_project01.conn.CommonAskTask;
 import com.google.gson.Gson;
 
 import java.text.DateFormat;
@@ -38,7 +37,7 @@ public class ReserveActivity extends AppCompatActivity implements View.OnClickLi
     Button order1000, order1030, order1100, order1130, order1200, order1230, order0100, order0130, order0200, order0230
             , order0300, order0330, order0400, order0430, order0500, order0530, pe2, pe3, pe4, pe5, btn_modify;
 
-   // FrameLayout res_container;
+    // FrameLayout res_container;
     LinearLayout res_time;
 
 
@@ -296,6 +295,8 @@ public class ReserveActivity extends AppCompatActivity implements View.OnClickLi
                     vo.setOrder_time(hour + minit + "");
                     vo.setOrder_peple(peple);
                     vo.setPrice(Integer.parseInt(total_price));
+                    vo.setStore_code(list.get(0).getStore_code());
+                    vo.setTotal_info(new Gson().toJson(list));
 
 
                     Intent intent1 = new Intent(ReserveActivity.this, BillActivity.class);
@@ -304,12 +305,12 @@ public class ReserveActivity extends AppCompatActivity implements View.OnClickLi
                     intent1.putExtra("list", list);
 
                     //디비에 주문정보 넣음
-                    CommonConn conn = new CommonConn(ReserveActivity.this, "reserve_store");
-                    conn.addParams("vo", new Gson().toJson(vo));
-                    conn.excuteConn(new CommonConn.ConnCallback() {
+                    CommonAskTask askTask = new CommonAskTask(ReserveActivity.this, "reserve_store");
+                    askTask.addParams("vo", new Gson().toJson(vo));
+                    askTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
                         @Override
-                        public void onResult(boolean isResult, String data) {
-                            if (isResult){
+                        public void onResult(String data, boolean isResult) {
+                            if (isResult) {
                                 Log.d("TAG", "onResult: 성공");
 
                             }

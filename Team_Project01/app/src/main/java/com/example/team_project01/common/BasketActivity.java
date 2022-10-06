@@ -6,23 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.view.View;
-
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.team_project01.R;
-
 import com.example.team_project01.conn.CommonAskTask;
-import com.example.team_project01.list.Store_infoDTO;
 import com.example.team_project01.order.Order_infoVO;
 import com.example.team_project01.order.ReserveActivity;
-
 import com.example.team_project01.store.StoreMenuDTO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -31,13 +23,12 @@ import java.util.ArrayList;
 
 public class BasketActivity extends AppCompatActivity {
     RecyclerView recv_basket;
-    ImageView  bask_back;
-    TextView tv_store_name, basket_total_cnt, basket_total_price;
+    ImageView imag_plus, imag_min, bask_back;
+    TextView tv_menu_cnt, tv_store_name, basket_total_cnt, basket_total_price;
     BasketAdapter adapter;
     Button reservation;
     Order_infoVO vo;
     ArrayList<BasketVO> list;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +36,21 @@ public class BasketActivity extends AppCompatActivity {
         setContentView(R.layout.activity_basket);
 
         recv_basket = findViewById(R.id.recv_basket);
+        imag_min = findViewById(R.id.imag_min);
+        imag_plus = findViewById(R.id.imag_plus);
+        tv_menu_cnt = findViewById(R.id.tv_menu_cnt);
+        reservation = findViewById(R.id.reservation);
 
         bask_back = findViewById(R.id.bask_back);
         tv_store_name = findViewById(R.id.tv_store_name);
         basket_total_cnt = findViewById(R.id.basket_total_cnt);
         basket_total_price = findViewById(R.id.basket_total_price);
-        reservation = findViewById(R.id.reservation);
 
         Intent intent = getIntent();
         String store_name = intent.getStringExtra("store_name");
 
         tv_store_name.setText(store_name);
+
 
 
         CommonAskTask commonAskTask = new CommonAskTask(BasketActivity.this, "andBasketList");

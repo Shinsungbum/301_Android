@@ -2,16 +2,12 @@ package com.example.team_project01.search;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-
-import android.util.Log;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +16,12 @@ import android.widget.TextView;
 
 import com.example.team_project01.R;
 import com.example.team_project01.common.BasketVO;
-import com.example.team_project01.conn.CommonConn;
+import com.example.team_project01.conn.CommonAskTask;
 import com.example.team_project01.list.Store_infoDTO;
 import com.example.team_project01.store.StoreActivity;
 import com.example.team_project01.store.StoreMenuDTO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 
 import java.util.ArrayList;
 
@@ -86,13 +81,14 @@ public class SearchAdapter extends BaseAdapter {
         tv_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CommonConn conn = new CommonConn(context, "storeMenuList");
-                conn.addParams("store_code", list.get(i).getStore_code());
-                conn.excuteConn(new CommonConn.ConnCallback() {
+                CommonAskTask askTask = new CommonAskTask(context, "storeMenuList");
+                askTask.addParams("store_code", list.get(i).getStore_code());
+                askTask.excuteAsk(new CommonAskTask.AsynckTaskCallBack() {
                     @Override
-                    public void onResult(boolean isResult, String data) {
-                        if (isResult){
-                            ArrayList<StoreMenuDTO> list1 = new Gson().fromJson(data, new TypeToken<ArrayList<StoreMenuDTO>>(){}.getType());
+                    public void onResult(String data, boolean isResult) {
+                        if (isResult) {
+                            ArrayList<StoreMenuDTO> list1 = new Gson().fromJson(data, new TypeToken<ArrayList<StoreMenuDTO>>() {
+                            }.getType());
                             Intent intent = new Intent(context, StoreActivity.class);
                             intent.putExtra("basketDTO", basketDTO);
                             intent.putExtra("list1", list1);

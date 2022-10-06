@@ -113,15 +113,7 @@
         android:layout_gravity="bottom"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/orange"
-            android:text="포장주문"
-            android:textColor="@color/white" />
+
 
         <Button
             android:id="@+id/reservation"

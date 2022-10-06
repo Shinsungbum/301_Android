@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,24 +14,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.team_project01.R;
-import com.example.team_project01.common.BasketActivity;
-import com.example.team_project01.common.BasketAdapter;
 import com.example.team_project01.common.BasketVO;
 import com.example.team_project01.common.CommonVal;
 import com.example.team_project01.conn.CommonAskTask;
-import com.example.team_project01.conn.CommonConn;
-import com.example.team_project01.list.Store_infoDTO;
 import com.example.team_project01.order.Order_infoVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.ViewHolder> {
 
@@ -42,6 +34,7 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
     Context context;
     Order_infoVO vo;
     ArrayList<BasketVO> list1;
+
 
     public StoreMenuAdapter(ArrayList<StoreMenuDTO> list, LayoutInflater inflater, Activity activity, Context context, Order_infoVO vo) {
 
@@ -163,8 +156,10 @@ public class StoreMenuAdapter extends RecyclerView.Adapter<StoreMenuAdapter.View
             }
 
         }
-        
+
         return qu;
     }
+
+
 
 }
